@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+  .home,
+  .services,
+  .reports,
+  .contact,
+  .events,
+  .support {
+  display: flex;
+  margin-left: 0px;
+  font-size: 1rem;
+  } 
+  
+  
