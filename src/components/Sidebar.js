@@ -60,7 +60,7 @@ z-index: 10;
 const SidebarWrap = styled.div`
 width: 100%;`;
 
-const Sidebar = () => {
+const Sidebar = ({ username }) => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 	const [windowHeight, setWindowHeight] = useState(window.innerHeight)
 	const setWindowDimensions = () => {
@@ -125,8 +125,8 @@ const Sidebar = () => {
 				</DialogTitle>
 				<DialogContent>
 					<DialogContentText class="alertBody">
-					<b>Name:</b> Luke Matheny <br></br><br></br>
-					<b>Email:</b> LM5@bmsgroup.com
+					<b>User: </b> {username} <br></br><br></br>
+					
 					</DialogContentText>
 				</DialogContent>
 				<DialogActions>
@@ -144,7 +144,7 @@ const Sidebar = () => {
 						<Box sx={{ flexGrow: 1 }}>
 							<Grid container spacing={2}>
 								<Grid item xs={8}>
-									<img style={{ maxHeight: (windowHeight / 100) * 7, marginLeft: '3.5%' }} src={bmslogo}></img>
+									<img style={{ maxHeight: (windowHeight / 100) * 7, marginLeft: '3.5%', marginBottom:'2%' }} src={bmslogo}></img>
 								</Grid>
 								<Grid item xs={2}>
 									<Box><div style={{ textAlign: 'right' }}><FaBell

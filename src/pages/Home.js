@@ -21,7 +21,7 @@ import { render } from 'react-dom';
 
 
 
-export const Home = () => {
+export const Home = ({ username }) => {
 
 
 
@@ -159,31 +159,43 @@ export const Home = () => {
 
 	// Converting the number value to string
 	let timez = mo.toString() + "/" + d.toString() + "/" + y.toString();
+	// Retrieve the variable from sessionStorage
+	const storedVariable = sessionStorage.getItem('myVariable');
+	const saved = localStorage.getItem("name");
+
+	const [name, setName] = useState(() => {
+		// getting stored value
+		const saved = localStorage.getItem("name");
+		const initialValue = JSON.parse(saved);
+		return initialValue || "";
+	  });
 
 
+	
+		return (
+			<div style={{ backgroundColor: "#cccccc" }}>
+				<Box sx={{ flexGrow: 1 }}>
+					<Grid container spacing={0}>
 
-	return (
-		<div style={{backgroundColor:"#cccccc"}}>
-			<Box sx={{ flexGrow: 1 }}>
-				<Grid container spacing={0}>
-					<Grid xs={12}>
-					
-						<h1 style={{ marginTop: '2%', marginBottom: '1.5%', textAlign: 'center', fontSize: (''+ windowHeight / 100 * 3 + 'px'), fontFamily: "ui-rounded" }}>{timez}</h1>
-			
-					</Grid>
+						<Grid xs={12}>
 
-					<Grid xs={12}>
-						<Box sx={{ width: '100%', height: (windowHeight / 100) * 95, marginLeft:'.25%', marginRight:'.25%' }}><iframe
-							frameBorder="0"
-							height={(windowHeight / 100) * 81}
-							src="https://livingatlas.arcgis.com/wildfireaware/"
-							width="100%"
-							
-						></iframe></Box>
-						{/* <Item><h1 class="placeholder">Content placeholder</h1> </Item> */}
-					</Grid>
+							{/* <h1 style={{ marginTop: '2%', marginBottom: '1.5%', textAlign: 'center', fontSize: (''+ windowHeight / 100 * 3 + 'px'), fontFamily: "ui-rounded" }}>{name}</h1> */}
 
-					{/* <Grid xs={12}>
+
+						</Grid>
+
+						<Grid xs={12}>
+							<Box sx={{ width: '100%', height: (windowHeight / 100) * 95, marginLeft: '.25%', marginRight: '.25%' }}><iframe
+								frameBorder="0"
+								height={(windowHeight / 100) * 81}
+								src="https://livingatlas.arcgis.com/wildfireaware/"
+								width="100%"
+
+							></iframe></Box>
+							{/* <Item><h1 class="placeholder">Content placeholder</h1> </Item> */}
+						</Grid>
+
+						{/* <Grid xs={12}>
 						<Item><Box sx={{ height: 500, width: '100%' }}>
 							<DataGrid 
 								rows={rows}
@@ -202,14 +214,15 @@ export const Home = () => {
 						</Box></Item>
 					</Grid> */}
 
-				</Grid>
-			</Box>
-			<div>
+					</Grid>
+				</Box>
+				<div>
 
+				</div>
 			</div>
-		</div>
-	);
-};
+		);
+	
+}
 
 
 

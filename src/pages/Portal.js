@@ -225,8 +225,7 @@ const Portal = () => {
 
 
 
-    //if user is on mobile
-    if (isMobile) {
+    
 
 
         return (
@@ -454,10 +453,6 @@ const Portal = () => {
                         </Grid>
 
 
-
-
-
-
                     </Grid>
 
 
@@ -484,78 +479,7 @@ const Portal = () => {
 
 
         );
-    } else {
-        return (
-            <div className="portal">
-                <Box marginTop={"1%"} marginLeft={"2%"}>
-
-
-                    <Grid container spacing={2}>
-
-
-                        {/* switch */}
-                        <Grid item xs={6}> <Box
-                            sx={{
-                                display: 'flex',
-                                justifyContent: 'flex-start',
-                                marginLeft: '2%',
-                                bgcolor: 'background.paper',
-
-
-                            }}
-                        ></Box>
-                            <FormControlLabel control={<Switch checked={checked} onChange={switchHandlerWeb} />}
-                                label="My Submissions"
-                            />
-                        </Grid>
-
-
-
-
-                        {/* search bar */}
-                        <Grid item xs={6}> <Box
-                            sx={{
-                                display: 'flex',
-                                justifyContent: 'flex-end',
-                                marginRight: '2%',
-                                bgcolor: 'background.paper',
-
-
-                            }}
-                        >
-                            <TextField id="outlined-basic" label="Search..." variant="outlined" size="small" />
-                        </Box>
-                        </Grid>
-
-
-
-
-
-
-                    </Grid>
-
-
-                    {/* results image */}
-                    <div><img style={{ width: '100%', height: (windowHeight / 100) * { length }, marginBottom: '0%' }} align='center' src={resultWeb} class="adBanner" ></img></div>
-                    {/* <DataGrid
-                               rows={rows}
-                               columns={columns}
-                               initialState={{
-                                   pagination: {
-                                       paginationModel: {
-                                           pageSize: 10,
-                                          
-                                       },
-                                   },
-                               }}
-                               pageSizeOptions={[5]}
-                              
-                           /> */}
-                </Box></div>
-
-
-        );
-    }
+    
 }
 
 

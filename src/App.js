@@ -6,20 +6,23 @@ import {Home} from "./pages/Home";
 import NewProject from "./pages/NewProject";
 import Portal from "./pages/Portal";
 import Admin from "./pages/Admin";
-function App() {
+
+const App = ({ username }) => {
 
 	
   
 return (
+	
+	
 	<Router>
-	<Sidebar />
+	<Sidebar  username={username} />
 	<Routes>
 		<Route path='/links/Air' element={<Air/>} />
 		<Route path='/links/RMS' element={<RMS/>} />
-		<Route path='/' element={<Home/>} />
+		<Route path='/' element={<Home username={username} />} />
 		<Route path='/portal' element={<Portal/>} />
-		<Route path='/new' element={<NewProject/>} />
-		<Route path='/admin' element={<Admin/>} />
+		<Route path='/new' element={<NewProject username={username}/>} />
+		<Route path='/admin' element={<Admin username={username} />} />
 	</Routes>
 	</Router>
 );
