@@ -46,7 +46,7 @@ const Login = () => {
 
 
   const handleLogin = () => {
-    if ((username == process.env.REACT_APP_U1_USER && password == process.env.REACT_APP_U1_PASSWORD) || (username == process.env.REACT_APP_U2_USER && password == process.env.REACT_APP_U2_PASSWORD) || (username == process.env.REACT_APP_U3_USER && password == process.env.REACT_APP_U3_PASSWORD)) {
+    if ((username == "LM5" && password == "test") || (username == process.env.REACT_APP_U2_USER && password == process.env.REACT_APP_U2_PASSWORD) || (username == process.env.REACT_APP_U3_USER && password == process.env.REACT_APP_U3_PASSWORD)) {
       // Successful login logic (e.g., set authentication state)
       // Save the variable to sessionStorage
       // To store data:
